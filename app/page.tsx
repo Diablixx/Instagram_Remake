@@ -1,65 +1,160 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <div className="min-h-screen bg-black flex flex-col">
+      {/* Main Content */}
+      <main className="flex-1 flex items-center justify-center px-4 py-8">
+        <div className="w-full max-w-[850px] flex items-center justify-center gap-8">
+          {/* Left Side - Phone Mockup with Images (Hidden on Mobile) */}
+          <div className="hidden lg:block relative w-[380px] h-[580px] flex-shrink-0">
+            <div className="relative w-full h-full">
+              {/* Phone Frame Background */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-[300px] h-[550px]">
+                  {/* Collage of images */}
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    {/* Main phone container */}
+                    <div className="relative w-full h-full rounded-[30px] overflow-hidden bg-gray-900 shadow-2xl border-8 border-gray-800">
+                      {/* Screenshot placeholder - we'll use a gradient and shapes */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900">
+                        {/* Image grid simulation */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[75%] grid grid-cols-3 gap-1">
+                          <div className="bg-orange-500 rounded-lg"></div>
+                          <div className="bg-blue-600 rounded-lg"></div>
+                          <div className="bg-pink-500 rounded-lg"></div>
+                          <div className="bg-green-500 rounded-lg"></div>
+                          <div className="bg-purple-600 rounded-lg"></div>
+                          <div className="bg-yellow-500 rounded-lg"></div>
+                          <div className="bg-red-500 rounded-lg"></div>
+                          <div className="bg-teal-500 rounded-lg"></div>
+                          <div className="bg-indigo-600 rounded-lg"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating emoji/icon decorations */}
+                  <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full shadow-lg"></div>
+                  <div className="absolute top-1/4 -right-6 w-14 h-14 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg"></div>
+                  <div className="absolute bottom-1/4 -left-6 w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full shadow-lg"></div>
+                  <div className="absolute -bottom-6 right-1/4 w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full shadow-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Login Form */}
+          <div className="w-full max-w-[350px]">
+            {/* Login Box */}
+            <div className="border border-[#262626] bg-black px-10 py-10 mb-3">
+              {/* Instagram Logo */}
+              <div className="flex justify-center mb-8">
+                <h1 className="text-white text-[52px] tracking-wide" style={{ fontFamily: 'Billabong, cursive' }}>
+                  Instagram
+                </h1>
+              </div>
+
+              {/* Login Form */}
+              <form className="space-y-1.5">
+                <input
+                  type="text"
+                  placeholder="Phone number, username or email address"
+                  className="w-full px-2 py-[9px] text-xs bg-[#121212] border border-[#262626] rounded-[3px] text-white placeholder-gray-500 focus:outline-none focus:border-[#363636]"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="w-full px-2 py-[9px] text-xs bg-[#121212] border border-[#262626] rounded-[3px] text-white placeholder-gray-500 focus:outline-none focus:border-[#363636]"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-[#0095f6] hover:bg-[#1877f2] text-white font-semibold py-[7px] px-4 rounded-lg text-sm mt-2 transition-colors"
+                >
+                  Log in
+                </button>
+              </form>
+
+              {/* OR Divider */}
+              <div className="flex items-center my-5">
+                <div className="flex-1 border-t border-[#262626]"></div>
+                <span className="px-4 text-[#737373] text-sm font-semibold">OR</span>
+                <div className="flex-1 border-t border-[#262626]"></div>
+              </div>
+
+              {/* Facebook Login */}
+              <button className="w-full flex items-center justify-center gap-2 text-[#385185] font-semibold text-sm hover:text-[#4267B2] transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Log in with Facebook
+              </button>
+
+              {/* Forgot Password */}
+              <div className="text-center mt-5">
+                <Link href="#" className="text-xs text-[#00376b] hover:text-white transition-colors">
+                  Forgotten your password?
+                </Link>
+              </div>
+            </div>
+
+            {/* Sign Up Box */}
+            <div className="border border-[#262626] bg-black px-10 py-6 text-center">
+              <p className="text-sm text-white">
+                Don&apos;t have an account?{" "}
+                <Link href="#" className="text-[#0095f6] font-semibold hover:text-white transition-colors">
+                  Sign up
+                </Link>
+              </p>
+            </div>
+
+            {/* Get the App */}
+            <div className="mt-5 text-center">
+              <p className="text-sm text-white mb-4">Get the app.</p>
+              <div className="flex gap-2 justify-center">
+                <Link href="#" className="block">
+                  <div className="h-10 bg-transparent border border-[#262626] rounded-md px-4 flex items-center hover:border-[#363636] transition-colors">
+                    <span className="text-white text-xs">Get it on Google Play</span>
+                  </div>
+                </Link>
+                <Link href="#" className="block">
+                  <div className="h-10 bg-transparent border border-[#262626] rounded-md px-4 flex items-center hover:border-[#363636] transition-colors">
+                    <span className="text-white text-xs">Get it from Microsoft</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="py-8 px-4">
+        <div className="max-w-[935px] mx-auto">
+          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 text-xs text-[#737373]">
+            <Link href="#" className="hover:text-white transition-colors">Meta</Link>
+            <Link href="#" className="hover:text-white transition-colors">About</Link>
+            <Link href="#" className="hover:text-white transition-colors">Blog</Link>
+            <Link href="#" className="hover:text-white transition-colors">Jobs</Link>
+            <Link href="#" className="hover:text-white transition-colors">Help</Link>
+            <Link href="#" className="hover:text-white transition-colors">API</Link>
+            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="#" className="hover:text-white transition-colors">Locations</Link>
+            <Link href="#" className="hover:text-white transition-colors">Instagram Lite</Link>
+            <Link href="#" className="hover:text-white transition-colors">Threads</Link>
+            <Link href="#" className="hover:text-white transition-colors">Contact uploading and non-users</Link>
+            <Link href="#" className="hover:text-white transition-colors">Meta Verified</Link>
+          </nav>
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-[#737373]">
+            <select className="bg-transparent border-none text-[#737373] cursor-pointer focus:outline-none">
+              <option>English (UK)</option>
+            </select>
+            <span>© 2025 Instagram from Meta</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
